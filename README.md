@@ -84,6 +84,14 @@ And after saving that rule, you'll want to run this:
 sudo systemd-hwdb update
 sudo udevadm trigger
 ```
+
+## Log out or restart X
+
+Finally, you'll want to either log out and log in to restart the X server or restart the whole computer. 
+
+I wasn't able to get the database update to work by simply unplugging and replugging the device in -  and I would have saved an hour of going around in futile circles if I had tried to just restart the system! Try that if you have trouble getting the database entry to be recognized. And if, for whatever reason, you decide that you no longer want to have it on your computer just follow these steps in reverse order, deleting the database file and updating the udev rules. This will revert the configuration to a blank state and the kernel will interact with the USB HID Device just based upon the standard commands given by its firmware. 
+
+## Other Notes
  
 The mapping isn't specific to a USB port, so the rules should work regardless of which port you connect it to. The value states are handled at the input event level and in my case, for this foot pedal and the Chrome extension that I'm using, it all works perfectly. 
 
